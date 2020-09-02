@@ -1,6 +1,8 @@
-import bar from './foo/bar';
+import { Pkg } from './../types/index.d';
+import checkNodeVersion from './utils/checkNodeVersion';
+import registerCommands from './api/registerCommands';
 
-export default (): string => {
-  bar();
-  return 'feboot';
+export default (pkg: Pkg): void => {
+  checkNodeVersion();
+  registerCommands({ pkg });
 };
