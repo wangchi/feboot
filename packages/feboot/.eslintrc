@@ -9,7 +9,8 @@
     "prettier/@typescript-eslint"
   ],
   "env": {
-    "node": true
+    "node": true,
+    "browser": true
   },
   "parserOptions": {
     "ecmaVersion": 9,

@@ -1,4 +1,5 @@
 import { CliOptions } from './../../types/index.d';
+import startCommandHandler from '../scripts/start';
 
 export default function startCommand({
   program,
@@ -8,6 +9,6 @@ export default function startCommand({
     .command('start')
     .description('start project')
     .action(() => {
-      console.log(febootConfig);
+      startCommandHandler(febootConfig);
     });
 }
