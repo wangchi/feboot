@@ -13,7 +13,7 @@ export default ({ config }: { config: Config }): void => {
   }
 
   if (!isPathExist(template)) {
-    template = path.join(__dirname, '../assets/index.html');
+    template = path.join(__dirname, '../../assets/index.html');
   }
 
   const publicPath = '/';
