@@ -11,6 +11,7 @@ import isPathExist from '../utils/isPathExist';
 import babelLoader from '../chains/babelLoader';
 import htmlWebpackPlugin from '../chains/htmlWebpackPlugin';
 import cssLoaders from '../chains/cssLoaders';
+import lessLoaders from '../chains/lessLoaders';
 import { logError } from '../utils/log';
 
 export default (febootConfig: FebootConfig): void => {
@@ -56,6 +57,7 @@ export default (febootConfig: FebootConfig): void => {
   // chains start
   babelLoader({ config });
   cssLoaders({ config });
+  lessLoaders({ config });
   htmlWebpackPlugin({ config });
   // chains end
 
@@ -74,6 +76,8 @@ export default (febootConfig: FebootConfig): void => {
   }
 
   const compiler = webpack(config.toConfig());
+
+  console.log(JSON.stringify(compiler.options.module.rules));
 
   const server = new WebpackDevServer(compiler, {
     ...compiler.options.devServer,

@@ -15,13 +15,12 @@ export default ({ config }: { config: Config }): void => {
   // createCssRule('css', /\.css$/);
   // createCssRule('less', /\.less$/, 'less-loader');
 
-  const cssRule = config.module.rule('css').test(/\.css$/);
-  cssRule.use('styleLoader').loader('style-loader');
-  cssRule.use('cssLoader').loader('css-loader');
-  cssRule.use('lessLoader').loader('less-loader');
+  // const cssRule = config.module.rule('css').test(/\.css$/);
+  // cssRule.use('styleLoader').loader('style-loader');
+  // cssRule.use('cssLoader').loader('css-loader');
 
-  // const lessRule = config.module.rule('less').test(/\.less$/);
-  // lessRule.use('styleLoader').loader('style-loader');
-  // lessRule.use('cssLoader').loader('css-loader');
-  // lessRule.use('lessLoader').loader('less-loader');
+  const lessRule = config.module.rule('less').test(/\.less$/);
+  lessRule.use('styleLoader').loader('style-loader');
+  lessRule.use('cssLoader').loader('css-loader');
+  lessRule.use('lessLoader').loader('less-loader');
 };
