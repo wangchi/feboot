@@ -1,0 +1,6 @@
+@import './common.less';
+@import './after.styl';
+
+body {
+  color: #36f;
+}

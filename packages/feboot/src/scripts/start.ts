@@ -11,7 +11,6 @@ import isPathExist from '../utils/isPathExist';
 import babelLoader from '../chains/babelLoader';
 import htmlWebpackPlugin from '../chains/htmlWebpackPlugin';
 import cssLoaders from '../chains/cssLoaders';
-import lessLoaders from '../chains/lessLoaders';
 import { logError } from '../utils/log';
 
 export default (febootConfig: FebootConfig): void => {
@@ -57,10 +56,10 @@ export default (febootConfig: FebootConfig): void => {
   // chains start
   babelLoader({ config });
   cssLoaders({ config });
-  lessLoaders({ config });
   htmlWebpackPlugin({ config });
   // chains end
 
+  // for dev
   config.devServer
     .quiet(true)
     .hot(true)
@@ -71,13 +70,14 @@ export default (febootConfig: FebootConfig): void => {
     .noInfo(true)
     .quiet(false);
 
+  // for webpack chain extension
   if (isFunction(chainWebpack)) {
     chainWebpack(config);
   }
 
   const compiler = webpack(config.toConfig());
 
-  console.log(JSON.stringify(compiler.options.module.rules));
+  // console.log(JSON.stringify(compiler.options.module.rules));
 
   const server = new WebpackDevServer(compiler, {
     ...compiler.options.devServer,
