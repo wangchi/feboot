@@ -55,7 +55,7 @@ export default (febootConfig: FebootConfig): void => {
 
   // chains start
   babelLoader({ config });
-  cssLoaders({ config });
+  cssLoaders({ config, febootConfig });
   htmlWebpackPlugin({ config });
   // chains end
 

@@ -1,6 +1,8 @@
-import Config from 'webpack-chain';
+import { ChainsConfig } from './../../types/index.d';
 
-export default ({ config }: { config: Config }): void => {
+export default ({ config, febootConfig }: ChainsConfig): void => {
+  const cssConfig = febootConfig.css || {};
+
   function createCssRule(lang: string, test: RegExp, loader?: string) {
     const cssRule = config.module.rule(lang).test(test);
 
@@ -15,6 +17,17 @@ export default ({ config }: { config: Config }): void => {
 
     if (loader) {
       cssRule.use(loader).loader(loader);
+    }
+
+    if (cssConfig.autoprefixer) {
+      cssRule
+        .use('postcss-loader')
+        .loader('postcss-loader')
+        .options({
+          postcssOptions: {
+            plugins: [require('autoprefixer')(cssConfig.autoprefixer)],
+          },
+        });
     }
   }
 
