@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+}
+
+.header,
+.footer {
+  background-color: #ccc;
+}
+
+.header,
+.footer {
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+}
+
+.main {
+  margin: 30px auto 0;
+  width: 1200px;
+  display: flex;
+  min-height: 300px;
+
+  .left,
+  .right {
+    padding: 20px;
+    background-color: #ccc;
+    border-radius: 3px;
+  }
+
+  .left {
+    flex: 0 0 200px;
+  }
+
+  .right {
+    margin-left: 30px;
+    flex: 1 1 auto;
+  }
+}
+
+.footer {
+  margin-top: 30px;
+}
