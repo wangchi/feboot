@@ -22,6 +22,9 @@ export interface RegisterCommandOptions {
   pkg: Pkg;
 }
 
+export type FebootPreset = string | [string, AnyObj];
+export type FebootPlugin = string | [string, AnyObj];
+
 // for feboot.config.js
 export interface FebootConfig {
   // base config
@@ -57,10 +60,10 @@ export interface FebootConfig {
   chainWebpack?: (config: Config) => void;
 
   // presets
-  presets?: [];
+  presets?: FebootPreset[];
 
   // plugins
-  plugins?: [];
+  plugins?: FebootPlugin[];
 }
 
 export interface ChainsConfig {

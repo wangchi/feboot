@@ -1,7 +1,7 @@
 import Config from 'webpack-chain';
 
 export default ({ config }: { config: Config }): void => {
-  const babelRule = config.module.rule('babel').test(/.(j|t)sx?$/);
+  const babelRule = config.module.rule('babel').test(/.(j|t)s$/);
 
   const babelConf = {
     presets: [
