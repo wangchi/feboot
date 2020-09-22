@@ -1,0 +1,16 @@
+{
+  "name": "07.vue-app",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^2.6.12",
+    "feboot": "0.0.1",
+    "@feboot/preset-vue": "0.0.1"
+  }
+}

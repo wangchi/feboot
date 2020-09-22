@@ -93,7 +93,7 @@ export default (febootConfig: FebootConfig): void => {
 
   const compiler = webpack(config.toConfig());
 
-  console.log(JSON.stringify(compiler.options.resolve));
+  // console.log(JSON.stringify(compiler.options.resolve));
 
   const server = new WebpackDevServer(compiler, {
     ...compiler.options.devServer,

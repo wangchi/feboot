@@ -7,7 +7,8 @@
     "plugin:@typescript-eslint/recommended",
     "prettier",
     "prettier/@typescript-eslint",
-    "plugin:react/recommended"
+    "plugin:react/recommended",
+    "plugin:vue/recommended"
   ],
   "env": {
     "node": true,
