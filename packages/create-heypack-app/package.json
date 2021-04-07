@@ -1,0 +1,26 @@
+{
+  "name": "create-heypack-app",
+  "version": "0.0.1",
+  "description": "create-heypack-app",
+  "author": "Mozisu <mozisu7@foxmail.com>",
+  "homepage": "https://github.com/mozisu/heypack#readme",
+  "license": "MIT",
+  "main": "lib/create-heypack-app.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mozisu/heypack.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/mozisu/heypack/issues"
+  }
+}

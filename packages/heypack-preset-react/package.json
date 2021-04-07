@@ -1,7 +1,7 @@
 {
-  "name": "@feboot/preset-react",
+  "name": "@heypack/preset-react",
   "version": "0.0.1",
-  "description": "feboot react presets",
+  "description": "Heypack preset to start a React project",
   "main": "lib/index.js",
   "scripts": {
     "start": "tsc --watch",
@@ -13,13 +13,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wangchi/feboot.git"
+    "url": "git+https://github.com/mozisu/heypack.git"
   },
   "bugs": {
-    "url": "https://github.com/wangchi/feboot/issues"
+    "url": "https://github.com/mozisu/heypack/issues"
   },
-  "author": "Wang Chi <hiwangchi@gmail.com>",
-  "homepage": "https://github.com/wangchi/feboot#readme",
+  "author": "Mozisu <mozisu7@foxmail.com>",
+  "homepage": "https://github.com/mozisu/heypack#readme",
   "license": "MIT",
   "dependencies": {
     "webpack": "^4.44.2",

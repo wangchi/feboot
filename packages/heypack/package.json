@@ -1,12 +1,12 @@
 {
-  "name": "feboot",
+  "name": "heypack",
   "version": "0.0.1",
-  "description": "feboot",
-  "main": "bin/feboot.js",
+  "description": "Heypack scripts and configuration",
+  "main": "bin/heypack.js",
   "scripts": {
     "start": "tsc --watch",
     "build": "tsc",
-    "feboot": "node ./bin/feboot.js",
+    "heypack": "node ./bin/heypack.js",
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "engines": {
@@ -14,13 +14,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wangchi/feboot.git"
+    "url": "git+https://github.com/mozisu/heypack.git"
   },
   "bugs": {
-    "url": "https://github.com/wangchi/feboot/issues"
+    "url": "https://github.com/mozisu/heypack/issues"
   },
-  "author": "Wang Chi <hiwangchi@gmail.com>",
-  "homepage": "https://github.com/wangchi/feboot#readme",
+  "author": "Mozisu <mozisu7@foxmail.com>",
+  "homepage": "https://github.com/mozisu/heypack#readme",
   "license": "MIT",
   "dependencies": {
     "@babel/core": "^7.11.5",
