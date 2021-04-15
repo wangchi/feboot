@@ -14,19 +14,19 @@ export interface Pkg {
 
 export interface CliOptions {
   program: commander.Command;
-  scriptFn?: (config: FebootConfig) => void;
-  febootConfig: FebootConfig;
+  scriptFn?: (config: HeypackConfig) => void;
+  heypackConfig: HeypackConfig;
 }
 
 export interface RegisterCommandOptions {
   pkg: Pkg;
 }
 
-export type FebootPreset = string | [string, AnyObj];
-export type FebootPlugin = string | [string, AnyObj];
+export type HeypackPreset = string | [string, AnyObj];
+export type HeypackPlugin = string | [string, AnyObj];
 
-// for feboot.config.js
-export interface FebootConfig {
+// for heypack.config.js
+export interface HeypackConfig {
   // base config
   entry?: string;
   base?: string;
@@ -60,13 +60,13 @@ export interface FebootConfig {
   chainWebpack?: (config: Config) => void;
 
   // presets
-  presets?: FebootPreset[];
+  presets?: HeypackPreset[];
 
   // plugins
-  plugins?: FebootPlugin[];
+  plugins?: HeypackPlugin[];
 }
 
 export interface ChainsConfig {
   config: Config;
-  febootConfig: FebootConfig;
+  heypackConfig: HeypackConfig;
 }

@@ -3,12 +3,12 @@ import startCommandHandler from '../scripts/start';
 
 export default function startCommand({
   program,
-  febootConfig,
+  heypackConfig,
 }: CliOptions): void {
   program
     .command('start')
     .description('start project')
     .action(() => {
-      startCommandHandler(febootConfig);
+      startCommandHandler(heypackConfig);
     });
 }

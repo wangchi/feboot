@@ -10,18 +10,18 @@ const CWD = process.cwd();
 export default function registerCommands({
   pkg,
 }: RegisterCommandOptions): void {
-  let febootConfig = {};
-  const configFilePath = path.join(CWD, './feboot.config.js');
+  let heypackConfig = {};
+  const configFilePath = path.join(CWD, './heypack.config.js');
 
   const commandFiles = findFirstLevelFiles(path.join(__dirname, '../cli'), [
     '.js',
   ]);
 
   if (isPathExist(configFilePath)) {
-    febootConfig = require(configFilePath);
+    heypackConfig = require(configFilePath);
   } else {
-    // logWarning('缺少 feboot.config.js 配置文件');
-    febootConfig = {};
+    // logWarning('缺少 heypack.config.js 配置文件');
+    heypackConfig = {};
   }
 
   program.name(pkg.name).version(pkg.version).usage('<command> [options]');
@@ -29,7 +29,7 @@ export default function registerCommands({
   commandFiles.forEach((file) => {
     // console.log(path.join(__dirname, '../cli', file));
     const commandFn = require(path.join(__dirname, '../cli', file));
-    commandFn.default({ program, febootConfig });
+    commandFn.default({ program, heypackConfig });
   });
 
   if (process.argv.length > 2) {

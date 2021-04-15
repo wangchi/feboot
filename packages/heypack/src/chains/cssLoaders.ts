@@ -1,7 +1,7 @@
 import { ChainsConfig } from './../../types/index.d';
 
-export default ({ config, febootConfig }: ChainsConfig): void => {
-  const cssConfig = febootConfig.css || {};
+export default ({ config, heypackConfig }: ChainsConfig): void => {
+  const cssConfig = heypackConfig.css || {};
 
   function createCssRule(lang: string, test: RegExp, loader?: string) {
     const cssRule = config.module.rule(lang).test(test);

@@ -3,29 +3,32 @@
  */
 
 import { logError } from '../utils/log';
-import { FebootConfig, FebootPreset } from './../../types/index.d';
+import { HeypackConfig, HeypackPreset } from './../../types/index.d';
 import Config from 'webpack-chain';
 import path from 'path';
 
 interface RegisterPresetsOptions {
   chainConfig: Config;
-  febootConfig: FebootConfig;
+  heypackConfig: HeypackConfig;
 }
 
 const CWD = process.cwd();
 
 export default ({
   chainConfig,
-  febootConfig,
+  heypackConfig,
 }: RegisterPresetsOptions): void => {
-  if (!Array.isArray(febootConfig.presets) || febootConfig.presets.length === 0)
+  if (
+    !Array.isArray(heypackConfig.presets) ||
+    heypackConfig.presets.length === 0
+  )
     return;
 
   // TODO: check package exist
   // TODO: load presets from npm
   // TODO: support load local presets
 
-  febootConfig.presets.forEach((preset: FebootPreset) => {
+  heypackConfig.presets.forEach((preset: HeypackPreset) => {
     if (typeof preset === 'string') {
       // console.log(path.join(CWD, 'node_modules', preset));
       require(path.join(CWD, 'node_modules', preset)).default({

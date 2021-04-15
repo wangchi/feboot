@@ -4,14 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "feboot start",
+    "start": "heypack start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "feboot": "0.0.1",
-    "@feboot/preset-react": "0.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   }

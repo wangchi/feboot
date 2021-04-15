@@ -8,7 +8,7 @@
 export default {
   data() {
     return {
-      message: 'Hello feboot',
+      message: 'Hello heypack',
     };
   },
   methods: {

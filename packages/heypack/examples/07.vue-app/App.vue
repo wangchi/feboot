@@ -2,6 +2,7 @@
   <div id="app">
     <page-header></page-header>
     hello vue
+    <div class="box">heypack</div>
   </div>
 </template>
 <script>
@@ -13,3 +14,8 @@ export default {
   },
 };
 </script>
+<style>
+.box {
+  color: #f80;
+}
+</style>

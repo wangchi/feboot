@@ -1,4 +1,4 @@
-import { FebootConfig, FebootPreset } from './../../types/index.d';
+import { HeypackConfig, HeypackPreset } from './../../types/index.d';
 import Config from 'webpack-chain';
 import webpack from 'webpack';
 import WebpackDevServer from 'webpack-dev-server';
@@ -16,16 +16,16 @@ import cssLoaders from '../chains/cssLoaders';
 import { logError } from '../utils/log';
 import registerPresets from '../api/registerPresets';
 
-export default (febootConfig: FebootConfig): void => {
+export default (heypackConfig: HeypackConfig): void => {
   const config = new Config();
-  const { port = 3000, open = false, chainWebpack, proxy = {} } = febootConfig;
+  const { port = 3000, open = false, chainWebpack, proxy = {} } = heypackConfig;
 
   // ----- base start
   const name = 'main';
-  const base = febootConfig.base || '/';
-  let entry = febootConfig.entry || 'src/index.js';
-  const outputPath = febootConfig.outputPath || 'dist';
-  const publicPath = febootConfig.publicPath || '/';
+  const base = heypackConfig.base || '/';
+  let entry = heypackConfig.entry || 'src/index.js';
+  const outputPath = heypackConfig.outputPath || 'dist';
+  const publicPath = heypackConfig.publicPath || '/';
 
   if (!isPathExist(entry)) {
     entry = 'index.js';
@@ -46,7 +46,7 @@ export default (febootConfig: FebootConfig): void => {
     .set('mode', 'development')
     .output.path(path.join(process.cwd(), outputPath))
     .filename(
-      `js/${febootConfig.hash ? '[name].[hash:8]' : '[name]'}.bundle.js`
+      `js/${heypackConfig.hash ? '[name].[hash:8]' : '[name]'}.bundle.js`
     )
     .publicPath(publicPath);
 
@@ -68,15 +68,15 @@ export default (febootConfig: FebootConfig): void => {
     .quiet(false);
 
   // chains start
-  alias({ config, febootConfig });
+  alias({ config, heypackConfig });
   babelLoader({ config });
-  cssLoaders({ config, febootConfig });
+  cssLoaders({ config, heypackConfig });
   htmlWebpackPlugin({ config });
   // chains end
 
   // register presets start
   try {
-    registerPresets({ chainConfig: config, febootConfig });
+    registerPresets({ chainConfig: config, heypackConfig });
   } catch (e) {
     logError(e.message);
     process.exit(1);

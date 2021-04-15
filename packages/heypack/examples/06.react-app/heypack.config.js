@@ -10,7 +10,6 @@ module.exports = {
       ],
     },
   },
-  presets: ['@feboot/preset-react'],
-  // presets: ['../../../feboot-preset-react'],
-  // presets: [['@feboot/preset-react', {}]],
+  presets: ['@heypack/preset-react'],
+  // presets: [['@heypack/preset-react', {}]],
 };

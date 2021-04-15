@@ -1,7 +1,7 @@
 'use strict';
 
-const feboot = require('..');
+const heypack = require('..');
 
-describe('feboot', () => {
-    it('needs tests');
+describe('heypack', () => {
+  it('needs tests');
 });
