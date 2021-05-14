@@ -2,7 +2,9 @@
 
 <div align="center">
 
-Quickly start your next web application, React and Vue are optional.
+Quickly start your next web application.
+
+React and Vue are optional.
 
 [![npm version][npm-version-image]][npm-url]
 [![npm downloads][npm-download-image]][npm-url]

@@ -2,6 +2,6 @@
 
 const createHeyappApp = require('..');
 
-describe('create-heyapp-app', () => {
+describe('create-heyapp', () => {
   it('needs tests');
 });
